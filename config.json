@@ -1,0 +1,12 @@
+{
+  "discord": {
+    "embed": {
+      "colors": {
+        "white": "#fff4e6",
+        "red": "#cc2a36",
+        "green": "#77ab59",
+        "yellow": "#ecb939"
+      }
+    }
+  }
+}
