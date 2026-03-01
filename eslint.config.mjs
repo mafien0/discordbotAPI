@@ -7,9 +7,9 @@ export default defineConfig([
         files: ["**/*.js"],
         languageOptions: {
             globals: {
-                ...globals.node,      // Node.js globals like require, module, process, console
+                ...globals.node,
             },
-            sourceType: "commonjs",   // since you use require/module.exports
+            sourceType: "commonjs",
         },
         plugins: {
             js,
