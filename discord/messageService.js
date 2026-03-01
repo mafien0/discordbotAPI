@@ -1,12 +1,14 @@
 // Hold a reference to the Discord client, set from index.js
 let client = null;
 
+// Channels will be filled on bot login
 const CHANNELS = {
     chat: null,
     status: null,
     updates: null,
 };
 
+// get a discord client from `index.js`. will be set on bot login
 function setDiscordClient(discordClient) {
     if (!discordClient) throw new Error("Discord client is required");
     client = discordClient;
@@ -38,6 +40,7 @@ async function sendMsg(msg, type = "chat") {
     if (!msg) throw new Error("No message provided");
     if (!CHANNELS[type])  throw new Error(`Channel for type "${type}" is not initialized`);
 
+    console.log(`Sending message to "${type}" channel`);
     return CHANNELS[type].send(msg);
 }
 const sendEmbedMsg = (msg) => sendMsg({ embeds: [msg] });

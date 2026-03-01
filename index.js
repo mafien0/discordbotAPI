@@ -1,15 +1,14 @@
 require("dotenv").config();
 
-const { createApi } = require("./api/api");
-const { createBot } = require("./discord/discord");
+const { createRouter } = require("./api/routes");
+const { createBot } = require("./discord/bot");
 
-// Note the added imported function
 const { setDiscordClient, initChannels } = require("./discord/messageService");
 
-// Create api
-const api = createApi();
+// Create API
+const app = createRouter();
 const port = process.env.PORT || 3000;
-api.listen(port, () => {
+app.listen(port, () => {
     console.log(`API is running on port ${port}`);
 });
 
