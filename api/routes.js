@@ -31,4 +31,4 @@ function createRouter() {
     return app;
 }
 
-module.exports = { createApi: createRouter };
+module.exports = { createRouter };
