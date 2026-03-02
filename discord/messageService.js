@@ -1,5 +1,3 @@
-const { createStatusEmbed } = require("./embeds");
-
 // Hold a reference to the Discord client, set from index.js
 let client = null;
 
@@ -67,6 +65,9 @@ async function sendMsg(msg, type = "chat") {
 		throw error;
 	}
 }
+
+const sendEmbedMsg = async (msg, type = "chat") =>
+	sendMsg({ embeds: [msg] }, type);
 
 module.exports = {
 	setDiscordClient,
