@@ -23,13 +23,9 @@ if (!token) {
 }
 
 bot.login(token).then(() => {
+	console.log("Discord bot is up");
 	setDiscordClient(bot);
 	initChannels().then(() => {
-		console.log("Channels initialized");
-
-		// Debug
 		createStatusMsg();
-
-		console.log("Discord bot is up");
 	});
 });

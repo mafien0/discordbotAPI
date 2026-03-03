@@ -25,9 +25,11 @@ const createSuccess = (header, content) =>
 const createWarning = (header, content) =>
 	generateEmbed(header, content, colors.yellow || "#ffff00");
 
+// Status embed
 function createStatusEmbed(s) {
 	if (!s) throw new Error("No status specified");
 	const color = s.status === "online" ? colors.green : colors.gray;
+
 	return new EmbedBuilder().setTitle(s.name).setColor(color).setDescription(`
 		Health: ${s.health}
 		Hunger: ${s.hunger}
