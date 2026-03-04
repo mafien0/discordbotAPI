@@ -74,11 +74,11 @@ export async function sendMsg(msg, channelType = "chat") {
 		throw error;
 	}
 }
-export const sendEmbedMsg = async (msg, channelType = "status") =>
+export const sendEmbedMsg = async (msg, channelType = "chat") =>
 	sendMsg({ embeds: [msg] }, channelType);
 
 // Wipe messaged util function
-export async function wipeMessages(channelType, limit = 100) {
+export async function wipeMessages(channelType = "status", limit = 100) {
 	const channel = CHANNELS[channelType];
 	const messages = await channel.messages.fetch({ limit });
 

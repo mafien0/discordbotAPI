@@ -4,12 +4,13 @@ import globals from "globals";
 
 export default defineConfig([
 	{
-		files: ["**/*.js"],
+		files: ["**/*.{js,mjs}"],
 		languageOptions: {
 			globals: {
 				...globals.node,
 			},
-			sourceType: "commonjs",
+			sourceType: "module",
+			ecmaVersion: "latest",
 		},
 		plugins: {
 			js,
