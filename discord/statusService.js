@@ -11,7 +11,7 @@ const status = {
 	ping: null,
 	coords: null,
 	dimension: null,
-	info: null,
+	info: "No info specified",
 };
 
 // Validate status field

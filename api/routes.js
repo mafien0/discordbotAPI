@@ -47,7 +47,8 @@ export function createRouter() {
 		console.log(`With fields: ${field} : ${value} `);
 
 		// Validation
-		if (!field || !value) {
+		// Value has to be check like that because js treats 0 as false
+		if (!field || value === undefined || value === null) {
 			return res.status(400).json({ error: "Field and value are required" });
 		}
 		if (!validateStatusField(field)) {
