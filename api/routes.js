@@ -12,13 +12,16 @@ export function createRouter() {
 	const app = express();
 	app.use(express.json());
 
-	app.get("/", (req, res) => {
+	app.get("/", (_, res) => {
+		console.log("Got an API req at path '/'");
 		res.send("API is up");
 	});
 
 	// Send message
 	app.post("/send-message", apiKeyMiddleware, async (req, res) => {
+		console.log("Got an API req at path '/send-message'");
 		const { msgHeader, msgContent } = req.body;
+		console.log(`With header: ${msgHeader}\n and content: ${msgContent}`);
 
 		// Validation
 		if (!msgHeader || !msgContent) {
@@ -39,7 +42,9 @@ export function createRouter() {
 
 	// Update status
 	app.patch("/status", apiKeyMiddleware, async (req, res) => {
+		console.log("Got an API req at path '/status'");
 		const { field, value } = req.body;
+		console.log(`With fields: ${field} : ${value} `);
 
 		// Validation
 		if (!field || !value) {
