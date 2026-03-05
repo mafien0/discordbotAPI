@@ -28,7 +28,8 @@ export const createWarning = (header, content) =>
 // Status embed
 export function createStatusEmbed(status) {
 	if (!status) throw new Error("No status specified");
-	const color = status.status === "online" ? colors.green : colors.gray;
+	const color =
+		status.status.toLowerCase() === "online" ? colors.green : colors.gray;
 
 	return new EmbedBuilder().setTitle(status.name).setColor(color)
 		.setDescription(`

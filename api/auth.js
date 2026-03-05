@@ -8,7 +8,7 @@ export function apiKeyMiddleware(req, res, next) {
 	}
 
 	if (!clientKey || clientKey !== serverKey) {
-		console.log("Client is unathorized");
+		console.log("Got an API req but client in unathorized");
 		return res.status(401).json({ error: "Unauthorized" });
 	}
 

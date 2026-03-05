@@ -19,8 +19,8 @@ export function createRouter() {
 
 	// Send message
 	app.post("/send-message", apiKeyMiddleware, async (req, res) => {
-		console.log("Got an API req at path '/send-message'");
 		const { msgHeader, msgContent } = req.body;
+		console.log("Got an API req at path '/send-message'");
 		console.log(`With header: ${msgHeader}\n and content: ${msgContent}`);
 
 		// Validation
@@ -42,8 +42,8 @@ export function createRouter() {
 
 	// Update status
 	app.patch("/status", apiKeyMiddleware, async (req, res) => {
-		console.log("Got an API req at path '/status'");
 		const { field, value } = req.body;
+		console.log("Got an API req at path '/status'");
 		console.log(`With fields: ${field} : ${value} `);
 
 		// Validation

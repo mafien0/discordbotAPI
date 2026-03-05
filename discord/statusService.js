@@ -4,7 +4,7 @@ import { sendEmbedMsg, wipeMessages } from "./messageService.js";
 let statusMsg;
 
 const status = {
-	status: null,
+	status: "offline",
 	name: null,
 	health: null,
 	hunger: null,
