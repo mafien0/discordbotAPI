@@ -19,7 +19,7 @@ export function createRouter() {
 	});
 
 	// Send message
-	app.post("/send-message", apiKeyMiddleware, async (req, res) => {
+	app.post("/message/send", apiKeyMiddleware, async (req, res) => {
 		const { msgHeader, msgContent } = req.body;
 		console.log("Got an API req at path '/send-message'");
 		console.log(`With header: ${msgHeader}\n and content: ${msgContent}`);
