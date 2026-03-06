@@ -30,15 +30,18 @@ export function createStatusEmbed(status) {
 	if (!status) throw new Error("No status specified");
 	const color =
 		status.status.toLowerCase() === "online" ? colors.green : colors.gray;
+	const time = Math.floor(Date.now() / 1000);
 
 	return new EmbedBuilder().setTitle(status.name).setColor(color)
 		.setDescription(`
-		Health: ${status.health}
-		Hunger: ${status.hunger}
-		Ping: ${status.ping}
-		Coords: ${status.coords}
-		Dimension: ${status.dimension}
-		${"-".repeat(30)}
-		${status.info}
-		`);
+\`\`\`
+Health | ${status.health}
+Hunger | ${status.hunger}
+Ping   | ${status.ping}
+\n${status.dimension}\n${status.coords}
+${"-".repeat(30)}
+${status.info}
+\`\`\`
+updated <t:${time}:R>
+`);
 }
